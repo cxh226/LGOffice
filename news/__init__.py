@@ -1,6 +1,1 @@
-#coding=utf-8
-from django.apps import AppConfig
-
-class RockNRollConfig(AppConfig):
-    name = 'news'
-    verbose_name = "发布"
+default_app_config = 'news.apps.RockNRollConfig'

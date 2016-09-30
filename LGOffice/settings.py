@@ -84,7 +84,7 @@ DATABASES = {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'lgoffice',
             'USER': 'root',
-            'PASSWORD': 'c67x88h72',
+            'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '',
     }
