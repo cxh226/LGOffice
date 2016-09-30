@@ -1,3 +1,4 @@
+#coding=utf-8
 """
 Django settings for LGOffice project.
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news',
+    'DjangoUeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,4 +111,37 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
+  
+STATIC_URL = '/static/'  
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),      
+    
+)
+
+
+
+
+UEDITOR_SETTINGS={
+                "toolbars":{           #定义多个工具栏显示的按钮，允行定义多个
+                    "name1":[[ 'source', '|','bold', 'italic', 'underline']],
+                    "name2":[]
+                },
+                "images_upload":{
+                    "allow_type":"jpg,png",    #定义允许的上传的图片类型
+                    "path":"",                   #定义默认的上传路径
+                    "max_size":"2222kb"        #定义允许上传的图片大小，0代表不限制
+                },
+                "files_upload":{
+                     "allow_type":"zip,rar",   #定义允许的上传的文件类型
+                     "path":"",                   #定义默认的上传路径
+                     "max_size":"2048kb"       #定义允许上传的文件大小，0代表不限制
+                 },
+                "image_manager":{
+                     "path":""         #图片管理器的位置,如果没有指定，默认跟图片路径上传一样
+                },
+                "scrawl_upload":{
+                    "path":""           #涂鸦图片默认的上传路径
+                }
+            }
