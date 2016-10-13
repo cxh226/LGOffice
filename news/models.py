@@ -30,8 +30,8 @@ class   Dep(models.Model):
     class Meta:
         verbose_name = u'部门'
         verbose_name_plural = u'部门'
-        app_label = u"news"
-        db_table = u'Dep'
+        app_label = u"news" 
+        db_table = u'Dep'    #设置数据库名称为Dep
         #按名称排序  
         ordering = ['sort']  
     

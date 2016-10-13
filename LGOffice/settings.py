@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news',
+    'report',
     'DjangoUeditor',
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,13 +115,17 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
   
-STATIC_URL = '/static/'  
+STATIC_URL = '/static/'    #系统映射地址到STATICFILES_DIRS目录，url将读取这个地址。
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),      
+    os.path.join(BASE_DIR, "static"),      #实际目录存放静态文件
     
 )
 
+
+MEDIA_ROOT =  'media1001/'    #上传文件保存地址
+
+MEDIA_URL = '/webhost_media/'      #系统映射地址，url会用webhost_media地址来读取media1001目录 下的文件
 
 
 
