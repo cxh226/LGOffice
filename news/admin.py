@@ -14,7 +14,7 @@ class   NewsDisplay(admin.ModelAdmin):
     fields = ('title','fdate','dep','news_type','author','contentUEdite',)   #自定义编辑表单，在编辑表单的时候 显示哪些字段，显示的属性,按顺序排序
     search_fields=('title','dep__department','author')  #搜索ptype是外键，dep__department表示从dep表里取department字段
     list_filter=('title','fdate','dep')  # 过滤器
-    
+#     
 
     
 class DepDisplay(admin.ModelAdmin):

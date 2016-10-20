@@ -40,7 +40,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'news',
     'report',
+    
     'DjangoUeditor',
+    'debug_toolbar',  #django-debug-toolbar 参数
+    'video',
     
 )
 
@@ -53,7 +56,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  #django-debug-toolbar 参数
+    
 )
+
+
 
 ROOT_URLCONF = 'LGOffice.urls'
 
@@ -67,7 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',   
             ],
         },
     },
@@ -151,3 +158,9 @@ UEDITOR_SETTINGS={
                     "path":""           #涂鸦图片默认的上传路径
                 }
             }
+
+
+##############django-debug-toolbar 添加部份
+INTERNAL_IPS = ('127.0.0.1',)  #django-debug-toolbar 参数
+DEBUG_TOOLBAR_PATCH_SETTINGS = False   #django-debug-toolbar 参数
+

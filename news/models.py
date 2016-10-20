@@ -27,9 +27,9 @@ class NewsTyep(models.Model):
     
 class   Dep(models.Model):
     #重写Meta模块,修改在管理后台中的显示名称      
-    class Meta:
-        verbose_name = u'部门'
-        verbose_name_plural = u'部门'
+    class Meta:   
+        verbose_name = u'部门'    #是该对象的一个可读性更好的唯一名字
+        verbose_name_plural = u'部门'  #若未提供该选项, Django 会使用 verbose_name + "s". 
         app_label = u"news" 
         db_table = u'Dep'    #设置数据库名称为Dep
         #按名称排序  
@@ -38,7 +38,7 @@ class   Dep(models.Model):
     department =  models.CharField(u'部门',max_length=255) #部门
     sort =  models.IntegerField(u'排序')  #排序位置    
         
-    def __str__(self):
+    def __str__(self):   #返回一个友好的，用户可读的字符串作为对象的__str__。尽管这不是必须的，但还是建议这么做
         return self.department    
     
     
@@ -61,6 +61,10 @@ class News(models.Model):
         verbose_name_plural = u'发布文章'  #修改管理级页面显示
         app_label = u"news"    
     
+    
+    def __str__(self):
+        return  self.title
+
     
     
         
